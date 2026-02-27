@@ -186,7 +186,9 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`TheQallaRoom server running on http://localhost:${PORT}`);
-  if(INVITE_CODE) console.log('Invite-only enabled (INVITE_CODE set).');
+const HOST = "0.0.0.0";
+
+server.listen(PORT, HOST, () => {
+  console.log(`TheQallaRoom server running on http://${HOST}:${PORT}`);
+  if (INVITE_CODE) console.log('Invite-only enabled (INVITE_CODE set).');
 });
